@@ -1,41 +1,87 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-<title>Login</title>
-
-<link rel="stylesheet"
-href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyCloud — Enter</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet"/>
 </head>
-
 <body class="login-page">
 
-<div class="login-container">
+  <!-- Animated background grid -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+  <canvas id="particles"></canvas>
 
-<h1 class="logo">
-☁ MY CLOUD
-</h1>
+  <!-- Scanline overlay -->
+  <div class="scanlines"></div>
 
-<input type="text"
-id="username"
-placeholder="Username">
+  <div class="login-wrapper">
+    <div class="login-card">
+      <div class="card-border-anim"></div>
 
-<input type="password"
-id="password"
-placeholder="Password">
+      <div class="logo-section">
+        <div class="logo-icon">
+          <svg viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="30" r="28" stroke="url(#lg1)" stroke-width="2"/>
+            <path d="M15 35 Q20 20 30 25 Q35 15 45 28 Q50 28 48 35 Z" fill="url(#lg2)" opacity="0.9"/>
+            <defs>
+              <linearGradient id="lg1" x1="0" y1="0" x2="60" y2="60">
+                <stop offset="0%" stop-color="#00f5ff"/>
+                <stop offset="100%" stop-color="#7b2fff"/>
+              </linearGradient>
+              <linearGradient id="lg2" x1="15" y1="15" x2="48" y2="40">
+                <stop offset="0%" stop-color="#00f5ff"/>
+                <stop offset="100%" stop-color="#7b2fff"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h1 class="logo-text">MY<span>CLOUD</span></h1>
+        <p class="logo-sub">SECURE PERSONAL STORAGE SYSTEM</p>
+      </div>
 
-<button onclick="login()">
-LOGIN
-</button>
+      <div class="divider"><span>IDENTITY VERIFICATION</span></div>
 
-<p id="error"></p>
+      <form class="login-form" onsubmit="handleLogin(event)">
+        <div class="field-group">
+          <label>USERNAME</label>
+          <div class="input-wrap">
+            <span class="input-icon">⬡</span>
+            <input type="text" id="username" placeholder="Enter username" autocomplete="off"/>
+            <div class="input-line"></div>
+          </div>
+        </div>
 
-</div>
+        <div class="field-group">
+          <label>PASSWORD</label>
+          <div class="input-wrap">
+            <span class="input-icon">◈</span>
+            <input type="password" id="password" placeholder="Enter password" autocomplete="off"/>
+            <div class="input-line"></div>
+          </div>
+        </div>
 
-<script src="script.js"></script>
+        <div id="error-msg" class="error-msg"></div>
 
+        <button type="submit" class="login-btn">
+          <span class="btn-text">INITIATE ACCESS</span>
+          <span class="btn-glow"></span>
+        </button>
+      </form>
+
+      <div class="card-footer">
+        <span class="status-dot"></span>
+        <span>SYSTEM ONLINE</span>
+        <span class="sep">|</span>
+        <span>ENCRYPTED</span>
+        <span class="sep">|</span>
+        <span>v2.0</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
