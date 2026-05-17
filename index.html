@@ -1,79 +1,47 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-<title>My Cloud</title>
+<meta charset="UTF-8">
 
-<style>
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
-body{
-background:#0f0f0f;
-color:white;
-font-family:Arial;
-text-align:center;
-padding:30px;
-}
+<title>My Cloud Login</title>
 
-h1{
-color:cyan;
-font-size:50px;
-}
-
-.upload-box{
-margin-top:40px;
-padding:30px;
-border:2px dashed cyan;
-border-radius:20px;
-}
-
-button{
-padding:12px 25px;
-background:cyan;
-border:none;
-border-radius:10px;
-font-size:16px;
-cursor:pointer;
-margin-top:20px;
-}
-
-button:hover{
-opacity:0.8;
-}
-
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
 
-<h1>☁ My Cloud</h1>
+<div class="login-container">
 
-<p>
-Store Photos, Videos and Documents
+<h1>☁ MY CLOUD</h1>
+
+<p class="subtitle">
+Secure Personal Storage
 </p>
 
-<div class="upload-box">
+<input type="text"
+id="username"
+placeholder="Username">
 
-<input type="file" id="fileInput">
+<input type="password"
+id="password"
+placeholder="Password">
 
-<br>
-
-<button onclick="uploadFile()">
-Upload File
+<button onclick="login()">
+LOGIN
 </button>
+
+<p id="error"></p>
 
 </div>
 
-<script>
-
-function uploadFile(){
-
-alert("Firebase upload coming next!");
-
-}
-
-</script>
+<script src="script.js"></script>
 
 </body>
+
 </html>
