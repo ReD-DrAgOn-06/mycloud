@@ -1,96 +1,153 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-<title>Dashboard</title>
-
-<link rel="stylesheet"
-href="style.css">
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MyCloud — Home</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;600&display=swap" rel="stylesheet"/>
 </head>
+<body class="home-page">
 
-<body>
+  <div class="bg-grid"></div>
+  <div class="bg-glow"></div>
+  <div class="scanlines"></div>
 
-<div class="sidebar">
+  <!-- Top Nav -->
+  <nav class="topnav">
+    <div class="nav-logo">
+      <svg viewBox="0 0 40 40" fill="none" width="32" height="32">
+        <circle cx="20" cy="20" r="18" stroke="url(#nlg)" stroke-width="1.5"/>
+        <path d="M10 24 Q14 14 20 17 Q24 10 30 20 Q33 20 32 24 Z" fill="url(#nlg2)" opacity="0.9"/>
+        <defs>
+          <linearGradient id="nlg" x1="0" y1="0" x2="40" y2="40">
+            <stop offset="0%" stop-color="#00f5ff"/>
+            <stop offset="100%" stop-color="#7b2fff"/>
+          </linearGradient>
+          <linearGradient id="nlg2" x1="10" y1="10" x2="32" y2="28">
+            <stop offset="0%" stop-color="#00f5ff"/>
+            <stop offset="100%" stop-color="#7b2fff"/>
+          </linearGradient>
+        </defs>
+      </svg>
+      <span>MY<b>CLOUD</b></span>
+    </div>
+    <div class="nav-center">
+      <span class="nav-status"><span class="status-dot"></span> ALL SYSTEMS OPERATIONAL</span>
+    </div>
+    <div class="nav-right">
+      <span class="nav-user">⬡ I</span>
+      <button class="logout-btn" onclick="logout()">LOGOUT</button>
+    </div>
+  </nav>
 
-<h1 class="logo">
-☁ CLOUD
-</h1>
+  <!-- Main Content -->
+  <main class="home-main">
+    <div class="welcome-section">
+      <h1 class="welcome-title">WELCOME BACK, <span>DRAGON</span></h1>
+      <p class="welcome-sub">Select a module to begin your session</p>
+    </div>
 
-<div class="menu">
+    <div class="modules-grid">
+      <!-- Cloud Module -->
+      <div class="module-card" onclick="goToCloud()">
+        <div class="module-glow"></div>
+        <div class="module-icon">
+          <svg viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="40" cy="40" r="38" stroke="url(#cg1)" stroke-width="1" stroke-dasharray="4 4"/>
+            <path d="M20 50 Q25 32 38 38 Q42 24 55 36 Q62 36 60 50 Z" fill="url(#cg2)" opacity="0.85"/>
+            <line x1="35" y1="55" x2="35" y2="65" stroke="#00f5ff" stroke-width="1.5" opacity="0.6"/>
+            <line x1="45" y1="55" x2="45" y2="65" stroke="#00f5ff" stroke-width="1.5" opacity="0.6"/>
+            <line x1="28" y1="65" x2="52" y2="65" stroke="#00f5ff" stroke-width="1.5" opacity="0.6"/>
+            <defs>
+              <linearGradient id="cg1" x1="0" y1="0" x2="80" y2="80">
+                <stop offset="0%" stop-color="#00f5ff"/>
+                <stop offset="100%" stop-color="#7b2fff"/>
+              </linearGradient>
+              <linearGradient id="cg2" x1="20" y1="20" x2="62" y2="55">
+                <stop offset="0%" stop-color="#00f5ff"/>
+                <stop offset="100%" stop-color="#7b2fff"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h2 class="module-title">CLOUD STORAGE</h2>
+        <p class="module-desc">Upload, manage & download your files via MEGA integration</p>
+        <div class="module-tags">
+          <span>IMAGES</span><span>VIDEOS</span><span>DOCS</span><span>PDFs</span>
+        </div>
+        <div class="module-arrow">→ ENTER</div>
+      </div>
 
-<a href="home.html">
-🏠 Home
-</a>
+      <!-- More modules (placeholders) -->
+      <div class="module-card locked">
+        <div class="module-glow purple"></div>
+        <div class="module-icon">
+          <svg viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="40" r="38" stroke="url(#sg1)" stroke-width="1" stroke-dasharray="4 4"/>
+            <rect x="28" y="30" width="24" height="20" rx="3" stroke="url(#sg1)" stroke-width="1.5" fill="none"/>
+            <path d="M33 30 v-4 a7 7 0 0 1 14 0 v4" stroke="url(#sg1)" stroke-width="1.5" fill="none"/>
+            <circle cx="40" cy="41" r="3" fill="url(#sg1)"/>
+            <defs>
+              <linearGradient id="sg1" x1="0" y1="0" x2="80" y2="80">
+                <stop offset="0%" stop-color="#7b2fff"/>
+                <stop offset="100%" stop-color="#ff2f7b"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h2 class="module-title">SECURE VAULT</h2>
+        <p class="module-desc">End-to-end encrypted private storage space</p>
+        <div class="module-tags"><span>COMING SOON</span></div>
+        <div class="module-arrow locked-tag">🔒 LOCKED</div>
+      </div>
 
-<a href="cloud.html">
-☁ Cloud Files
-</a>
+      <div class="module-card locked">
+        <div class="module-glow teal"></div>
+        <div class="module-icon">
+          <svg viewBox="0 0 80 80" fill="none">
+            <circle cx="40" cy="40" r="38" stroke="url(#ag1)" stroke-width="1" stroke-dasharray="4 4"/>
+            <circle cx="40" cy="35" r="10" stroke="url(#ag1)" stroke-width="1.5" fill="none"/>
+            <path d="M22 58 Q22 46 40 46 Q58 46 58 58" stroke="url(#ag1)" stroke-width="1.5" fill="none"/>
+            <defs>
+              <linearGradient id="ag1" x1="0" y1="0" x2="80" y2="80">
+                <stop offset="0%" stop-color="#00f5c4"/>
+                <stop offset="100%" stop-color="#00a8ff"/>
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <h2 class="module-title">PROFILE HUB</h2>
+        <p class="module-desc">Manage your identity, preferences and session data</p>
+        <div class="module-tags"><span>COMING SOON</span></div>
+        <div class="module-arrow locked-tag">🔒 LOCKED</div>
+      </div>
+    </div>
 
-<a href="index.html">
-🚪 Logout
-</a>
+    <!-- Stats bar -->
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-label">SESSION</span>
+        <span class="stat-value" id="session-time">00:00:00</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-label">STORAGE</span>
+        <span class="stat-value">MEGA</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-label">STATUS</span>
+        <span class="stat-value" style="color:#00f5c4">ACTIVE</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <span class="stat-label">USER</span>
+        <span class="stat-value">I</span>
+      </div>
+    </div>
+  </main>
 
-</div>
-
-</div>
-
-<div class="main">
-
-<h1>
-Welcome Back 👋
-</h1>
-
-<div class="card-container">
-
-<div class="card">
-
-<h2>
-📁 Files
-</h2>
-
-<p>
-Access all your files
-</p>
-
-<button onclick=
-"window.location.href='cloud.html'">
-
-Open
-
-</button>
-
-</div>
-
-<div class="card">
-
-<h2>
-⚡ Storage
-</h2>
-
-<p>
-MEGA Cloud Integration
-</p>
-
-</div>
-
-<div class="card">
-
-<h2>
-🔒 Security
-</h2>
-
-<p>
-Private Personal Dashboard
-</p>
-
-</div>
-
-</div>
-
-</div>
-
+  <script src="script.js"></script>
 </body>
-
 </html>
