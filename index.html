@@ -2,14 +2,78 @@
 <html>
 
 <head>
-  <title>My Cloud</title>
+
+<title>My Cloud</title>
+
+<style>
+
+body{
+background:#0f0f0f;
+color:white;
+font-family:Arial;
+text-align:center;
+padding:30px;
+}
+
+h1{
+color:cyan;
+font-size:50px;
+}
+
+.upload-box{
+margin-top:40px;
+padding:30px;
+border:2px dashed cyan;
+border-radius:20px;
+}
+
+button{
+padding:12px 25px;
+background:cyan;
+border:none;
+border-radius:10px;
+font-size:16px;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+opacity:0.8;
+}
+
+</style>
+
 </head>
 
-<body style="background:black;color:white;text-align:center;font-family:Arial">
+<body>
 
-<h1>My Personal Cloud Website</h1>
+<h1>☁ My Cloud</h1>
 
-<p>Website is working successfully!</p>
+<p>
+Store Photos, Videos and Documents
+</p>
+
+<div class="upload-box">
+
+<input type="file" id="fileInput">
+
+<br>
+
+<button onclick="uploadFile()">
+Upload File
+</button>
+
+</div>
+
+<script>
+
+function uploadFile(){
+
+alert("Firebase upload coming next!");
+
+}
+
+</script>
 
 </body>
 </html>
